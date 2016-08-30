@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
   def new
+    @categories = Category.all
+    @subcategories = Subcategory.all
   end
 
   def create
