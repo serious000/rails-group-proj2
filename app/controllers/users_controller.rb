@@ -2,9 +2,12 @@ class UsersController < ApplicationController
 	def index
 		render 'index'
 	end
+
 	def create
 		User.create(user_params)
 		redirect_to "/users/new"
+	end
+	def show
 	end
 
 private
