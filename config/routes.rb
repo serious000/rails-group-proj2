@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   resources :static_pages
   resources :sessions
+  resources :users
 
-  get '/static_pages/posting' => 'static_pages#posting'
+  get '/posting' => 'static_pages#posting'
+  post '/login' => 'sessions#login'
+  post '/glogin' => 'sessions#glogin'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
