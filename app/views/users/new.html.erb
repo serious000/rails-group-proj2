@@ -120,11 +120,11 @@
 	<div id="content">
 		<div id="login">
 			<h2> Log in </h2><br>
-				<form action="/login" method='post'>
+				<form action="/sessions" method='post'>
 				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 				Email: <input type="text" name="email"><br>
 				Password: <input type="password" name="password"><br><br>
-				<button type="button" class="btn-primary"> Log in </button>
+				<input type="submit" name="Log In">
 			</form>
 			<br><h2> Sign in with Google! </h2>
 			<div id="glogin">
@@ -144,9 +144,12 @@
 				Email: <input type="text" name="user[email]"><br>
 				Password: <input type="password" name="user[password]"><br>
 				Confirm Password: <input type="password" name="user[password_confirmation]"><br><br>
-				<button type="button" class="btn-primary"> Submit </button>
+				<input type="submit" name="Register">
 			</form>
 		</div>
 
 	</div>
+	<% if flash[:errors] %>
+	  <p><%= flash[:errors] %></p>
+	<% end %>
 </div>

@@ -39,15 +39,12 @@
 #   Listing.create listing
 # end
 
+
 rental_category = Category.create(name: 'Rental')
 sale_category = Category.create(name: 'Sale')
 
-Subcategory.create(name: 'Apartment', category_id: rental_category.id)
-Subcategory.create(name: 'Condominium', category_id: rental_category.id)
-Subcategory.create(name: 'House', category_id: rental_category.id)
-Subcategory.create(name: 'Room', category_id: rental_category.id)
-Subcategory.create(name: 'Townhouse', category_id: rental_category.id)
-Subcategory.create(name: 'Apartment', category_id: sale_category.id)
-Subcategory.create(name: 'Condominium', category_id: sale_category.id)
-Subcategory.create(name: 'House', category_id: sale_category.id)
-Subcategory.create(name: 'Townhouse', category_id: sale_category.id)
+Subcategory.create(name: 'Apartment')
+Subcategory.create(name: 'Condominium')
+Subcategory.create(name: 'House')
+Subcategory.create(name: 'Room')
+Subcategory.create(name: 'Townhouse')
