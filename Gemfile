@@ -42,3 +42,4 @@ gem 'devise'
 gem 'rails-footnotes', '>= 4.0.0', '<5'
 gem 'byebug'
 gem "figaro"
+gem 'paperclip'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829221315) do
+ActiveRecord::Schema.define(version: 20160829235652) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20160829221315) do
     t.integer  "listing_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
   end
 
   add_index "photos", ["listing_id"], name: "index_photos_on_listing_id"
