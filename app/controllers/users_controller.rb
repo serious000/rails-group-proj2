@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 		end
 	end
 	def show
+		@listings = User.find(current_user.id).listings.all
 	end
 	helper_method :current_user
 private

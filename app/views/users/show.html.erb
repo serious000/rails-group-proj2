@@ -1,2 +1,12 @@
-<h1> Welcome <%= current_user.first_name %>
+<h4> Welcome <%= current_user.first_name %></h4>
 <p> Here are your posts </p>
+<% @listings.each do |l| %>
+	<div>
+		<p><%= l.title %></p>
+		<p><%= l.description %></p>
+		<p><%= l.street %></p>
+		<p><%= l.beds %> beds, <%= l.baths %> baths</p>
+		<p>$<%= l.price %></p>
+	</div>
+	<br><br>
+<% end %>
