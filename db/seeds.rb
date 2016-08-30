@@ -28,13 +28,26 @@
 #   Subcategory.create subcategory
 # end
 
-new_listings = [
-  {title: "House for rent 1", description: "House for rent 1", city: "San Jose", state: "CA", zipcode: 95111, category_id: 1, subcategory_id: 3},
-  {title: "House for rent 2", description: "House for rent 2", city: "San Francisco", state: "CA", zipcode: 94111, category_id: 1, subcategory_id: 3},
-  {title: "House for sale 1", description: "House for sale 1", city: "San Jose", state: "CA", zipcode: 95110, category_id: 2, subcategory_id: 8},
-  {title: "House for sale 2", description: "House for sale 2", city: "San Francisco", state: "CA", zipcode: 94114, category_id: 2, subcategory_id: 8}
-]
+# new_listings = [
+#   {title: "House for rent 1", description: "House for rent 1", city: "San Jose", state: "CA", zipcode: 95111, category_id: 1, subcategory_id: 3},
+#   {title: "House for rent 2", description: "House for rent 2", city: "San Francisco", state: "CA", zipcode: 94111, category_id: 1, subcategory_id: 3},
+#   {title: "House for sale 1", description: "House for sale 1", city: "San Jose", state: "CA", zipcode: 95110, category_id: 2, subcategory_id: 8},
+#   {title: "House for sale 2", description: "House for sale 2", city: "San Francisco", state: "CA", zipcode: 94114, category_id: 2, subcategory_id: 8}
+# ]
 
-new_listings.each do |listing|
-  Listing.create listing
-end
+# new_listings.each do |listing|
+#   Listing.create listing
+# end
+
+rental_category = Category.create(name: 'Rental')
+sale_category = Category.create(name: 'Sale')
+
+Subcategory.create(name: 'Apartment', category_id: rental_category.id)
+Subcategory.create(name: 'Condominium', category_id: rental_category.id)
+Subcategory.create(name: 'House', category_id: rental_category.id)
+Subcategory.create(name: 'Room', category_id: rental_category.id)
+Subcategory.create(name: 'Townhouse', category_id: rental_category.id)
+Subcategory.create(name: 'Apartment', category_id: sale_category.id)
+Subcategory.create(name: 'Condominium', category_id: sale_category.id)
+Subcategory.create(name: 'House', category_id: sale_category.id)
+Subcategory.create(name: 'Townhouse', category_id: sale_category.id)

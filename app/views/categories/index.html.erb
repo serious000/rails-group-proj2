@@ -1,0 +1,11 @@
+<table>
+<tr>
+<th><%= link_to("Rental", category_path(@rental)) %> </th>
+</tr>
+<tr>
+<td>
+<% @rental.subcategories.each do |subcategory| %></td>
+<ul>
+<li><%= link_to(subcategory.name, category_subcategory_path(@rental, subcategory)) %></li>
+</ul>
+<% end %>
