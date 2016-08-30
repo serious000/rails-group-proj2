@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
   resources :static_pages
   resources :sessions
+<<<<<<< HEAD
+  resources :users
+
+  get '/posting' => 'static_pages#posting'
+  post '/login' => 'sessions#login'
+  post '/glogin' => 'sessions#glogin'
+=======
   resources :listings
   resources :photos
   resources :categories do
     resources :subcategories
   end
   get '/static_pages/posting' => 'static_pages#posting'
-  resources :users
-
-  get '/posting' => 'static_pages#posting'
-  post '/login' => 'sessions#login'
-  post '/glogin' => 'sessions#glogin'
+>>>>>>> a774f3444eb2293d08a28fa8e1de35de7e34f511
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
