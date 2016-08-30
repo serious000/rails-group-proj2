@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160830203147) do
+ActiveRecord::Schema.define(version: 20160830213621) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 20160830203147) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "state_id"
+    t.integer  "beds"
+    t.integer  "baths"
+    t.float    "price"
   end
 
   add_index "listings", ["category_id"], name: "index_listings_on_category_id"
