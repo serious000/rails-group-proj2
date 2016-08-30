@@ -1,0 +1,142 @@
+<head>
+
+</head>
+<style>
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#container{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	/*border: .1px solid;*/
+	text-align: center;
+    /*background-color: #7f7f81;*/
+}
+#logo{
+	width:20%;
+	height:200px;
+	display: inline-block;
+	vertical-align: top;
+}
+#nav_head{
+	width:75%;
+	height:200px;
+	/*border:solid;*/
+	/*margin: 0 auto;*/
+	display: inline-block;
+	vertical-align: top;
+
+}
+#nav_head ul{
+	width:20%;
+	/*border:solid;*/
+	margin-left:80%;
+}
+#nav_head li{
+	display: inline-block;
+}
+#middle_nav{
+	width:100%;
+	text-align: center;
+	/*display: inline;*/
+	/*border: solid;*/
+}
+/*#soption{
+	width:20%;
+}*/
+
+#left_col{
+	width:49%;
+	height:1000px;
+	border:.1px solid;
+	display: inline-block;
+	vertical-align: top;
+	/*margin-left:1.5px;*/
+}
+#right_col{
+	width:49%;
+	height: 1000px;
+	border:.1px solid;
+	display: inline-block;
+	vertical-align: top;
+	/*margin-right:1.5px;*/
+}
+</style>
+
+<div id="container">
+	<div id="nav">
+		<div id="logo">
+			<%= image_tag("class_homes.jpg") %> 
+		</div>
+		<div id="nav_head" class="navbar">
+			<ul style="list-style-type:none">
+				<li><a href="">Account</a></li>
+				<li><a href="">Post in classified</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="middle_nav">
+		<h1> Post to Classified </h1>
+
+	</div>
+	<br>
+	<div id="content">
+		<div id="left_col">
+			<div id="soption">
+				<h2> Choose City </h2>
+				<form action="">
+					  <input type="radio" name="city" value="1"> S.F <br>
+					  <input type="radio" name="city" value="2"> L.A<br>
+					  <input type="radio" name="city" value="3"> ST<br>
+				</form>
+			</div>
+
+		</div>
+		<div id="right_col">
+			<div id="soption">
+				<h2> Choose location </h2>
+				<form action="">
+					  <input type="radio" name="city" value="1"> East Bay <br>
+					  <input type="radio" name="city" value="2"> South Bay<br>
+					  <input type="radio" name="city" value="3"> North Bay<br>
+					  <input type="radio" name="city" value="4"> Peninsula <br>
+					  <input type="radio" name="city" value="5"> S.F <br>
+				</form>
+			</div>
+
+			<div id="soption">
+				<h2> Housing Type </h2>
+				<form action="">
+					  <input type="radio" name="city" value="1"> Apartment <br>
+					  <input type="radio" name="city" value="2"> Condo<br>
+					  <input type="radio" name="city" value="3"> House<br>
+					  <input type="radio" name="city" value="4"> Single Room <br>
+					  <input type="radio" name="city" value="5"> Town House <br>
+					  <button type="button" class="btn-primary"> Continue </button>
+				</form>
+			</div>
+			<div id="soption">
+				<h2> Choose City </h2>
+				<form action="">
+				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+					Title: <input type="text" name="title"><br>
+					Description: <input type="text" name="description"><br>
+					City: <input type="text" name="city"><br>
+					Street <input type="text" name="street"><br>
+					State <input type="text" name="state">
+					<br>
+					<h1> Upload Pictures </h1>
+					Picture 1 <input type="upload" name=""><br>
+					Picture 2 <input type="upload" name=""><br>
+					Picture 3 <input type="upload" name=""><br>
+					<a href=""> More pictures... </a>
+					<button> Preview </button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

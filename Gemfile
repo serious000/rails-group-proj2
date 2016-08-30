@@ -42,4 +42,5 @@ gem 'devise'
 gem 'rails-footnotes', '>= 4.0.0', '<5'
 gem 'byebug'
 gem "figaro"
-gem 'paperclip'
+gem 'paperclip'gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
