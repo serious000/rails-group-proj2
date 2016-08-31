@@ -22,7 +22,7 @@
 <%= select_tag :category, options_for_select(Category.all.map { |c| [c.name, c.id]}) %>
 <%= text_field_tag :search, nil, placeholder: 'search' %>
 <%= text_field_tag :location, nil, placeholder: 'near' %>
-<%= text_field_tag :radius, nil, placeholder: 'within 20 miles' %>
+<%= text_field_tag :radius, value="20" %>
 <%= submit_tag 'Search Listings' %>
 <% end %>
 <%= yield %>
