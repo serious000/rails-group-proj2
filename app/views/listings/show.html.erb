@@ -1,3 +1,22 @@
-<h1>Listings#show</h1>
-<p>Find me in app/views/listings/show.html.erb</p>
-<%= @listing.title %>
+<h3><%= @listing.title %></h3>
+<div>
+	<h4>About this listing</h4>
+	<p><%= @listing.description %></p>
+	<hr>
+	<h5>Info</h5>
+	<p>Beds: <%= @listing.beds %></p>
+	<p>Baths: <%= @listing.baths %></p>
+	<p>This listing is for <%= @listing.category.name.downcase %></p>
+	<% if @listing.category_id == 1 %>
+		<p>Monthly Rent: $<%= @listing.price %></p>
+	<% elsif @listing.category_id == 2 %>
+		<p>List Price: $<%= @listing.price %></p>
+	<% end %>
+	<h5>Contact</h5>
+	<p><a href="mailto:<%=@listing.user.email%>?subject=Inquiry%20about%20your%20listing"><%=@listing.user.email%></a></p>
+	<% if current_user.id == @listing.user_id %>
+		<a href="/listings/<%= @listing.id %>/edit">Edit this listing</a>
+	<% end %>
+</div>
+
+

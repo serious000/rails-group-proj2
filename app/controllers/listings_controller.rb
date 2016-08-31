@@ -2,8 +2,6 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
-    puts "*********111"
-    puts @listings
   end
 
   def new
@@ -11,7 +9,7 @@ class ListingsController < ApplicationController
     @subcategories = Subcategory.all
     @states = State.all
     @beds = [1, 2, 3, 4, 5]
-    @baths = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]
+    @baths = [1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]
   end
 
   def create
@@ -28,12 +26,21 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+
   end
 
   def edit
+    @listing = Listing.find(params[:id])
+    @categories = Category.all
+    @subcategories = Subcategory.all
+    @states = State.all
+    @beds = [1, 2, 3, 4, 5]
+    @baths = [1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]
   end
 
   def update
+    @listing = Listing.find(params[:id]).update(listing_params)
+    redirect_to "/listings/#{params[:id]}"
   end
 
   def destroy

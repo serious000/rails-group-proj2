@@ -1,12 +1,9 @@
-<h4> Welcome <%= current_user.first_name %></h4>
-<p> Here are your posts </p>
+<h4> Welcome <%= current_user.first_name %></h4><br>
+<h5>Your listings</h5>
 <% @listings.each do |l| %>
 	<div>
-		<p><%= l.title %></p>
+		<p><a href="/listings/<%=l.id%>"><%= l.title %></a></p>
 		<p><%= l.description %></p>
-		<p><%= l.street %></p>
-		<p><%= l.beds %> beds, <%= l.baths %> baths</p>
-		<p>$<%= l.price %></p>
 	</div>
 	<br><br>
 <% end %>

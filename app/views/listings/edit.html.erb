@@ -1,2 +1,42 @@
-<h1>Listings#edit</h1>
-<p>Find me in app/views/listings/edit.html.erb</p>
+<h1>Edit your listing</h1>
+<div class="form-listings">
+<form action="/listings/<%= @listing.id %>" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+	<input type="hidden" name="_method" value="patch"> 
+	Title: <input type="text" name="listing[title]" value="<%= @listing.title %>"><br>
+	Description: <input type="text" name="listing[description]" value="<%= @listing.description %>"><br>
+	Address: <input type="text" name="listing[street]" value="<%= @listing.street %>"><br>
+	City: <input type="text" name="listing[city]" value="<%= @listing.city %>"><br>
+	
+	State: <select name="listing[state_id]">
+		<option value="<%=@listing.state_id%>" selected="selected"><%= @listing.state.name %></option>
+		<% @states.each do |s| %>
+		<option value="<%=s.id%>"><%=s.name%></option>
+		<% end %>
+	</select><br>
+	
+	Zip: <input type="text" name="listing[zipcode]" value="<%= @listing.zipcode %>"><br>
+	Category: <select name="listing[category_id]" placeholder="<%= @listing.category.name %>">
+		<% @categories.each do |c| %>
+		<option value="<%= c.id %>"><%= c.name %></option>
+		<% end %>
+	</select><br>
+	Type: <select name="listing[subcategory_id]" placeholder="<%= @listing.subcategory.name %>">
+		<% @subcategories.each do |s| %>
+		<option value="<%= s.id %>"><%= s.name %></option>
+		<% end %>
+	</select><br>
+	Beds: <select name="listing[beds]">
+		<% @beds.each do |b| %>
+			<option value="<%= b.to_i %>"><%= b %></option>
+		<% end %>
+	</select><br>
+	Baths: <select name="listing[baths]">
+		<% @baths.each do |b| %>
+			<option value="<%= b %>"><%= b %></option>
+		<% end %>
+	</select><br>
+	Price: <input type="number"  name="listing[price]" min="1" step="1" max="10000000" value="1000" />
+	<input type="submit" value="Create Listing">
+</form>
+</div>
