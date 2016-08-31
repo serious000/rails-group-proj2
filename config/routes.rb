@@ -2,12 +2,19 @@ Rails.application.routes.draw do
   resources :users
   resources :static_pages
   resources :sessions
-  resources :listings
+  resources :listings do
+    collection do
+      get 'search'
+    end
+  end
   resources :photos
   resources :categories do
     resources :subcategories
   end
   get '/static_pages/posting' => 'static_pages#posting'
+  get  '/help',    to: 'static_pages#help'
+  get  '/about',   to: 'static_pages#about'
+  get  '/contact', to: 'static_pages#contact'
   get '/posting' => 'users#posting'
   post '/login' => 'sessions#login'
   post '/glogin' => 'sessions#glogin'

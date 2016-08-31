@@ -16,6 +16,7 @@ class ListingsController < ApplicationController
 
   def create
     @listing = User.find(current_user.id).listings.create(listing_params)
+    @state_name = State.find(Listing.last.state_id)
     if @listing.valid?
 
       redirect_to "/listings/#{@listing.id}"
@@ -38,6 +39,11 @@ class ListingsController < ApplicationController
   def destroy
     @listing = Listing.find(listing_params[:id]).destroy
     redirect_to "/listings"
+  end
+
+  def search
+    @categories = Category.all
+    @listings = Listing.search(params)
   end
 
   private
