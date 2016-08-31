@@ -36,12 +36,14 @@ class ListingsController < ApplicationController
   end
 
   def destroy
+    @listing = Listing.find(listing_params[:id]).destroy
+    redirect_to "/listings"
   end
 
   private
 
   def listing_params
-    params.require(:listing).permit(:title, :description, :street, :city, :state_id, :zipcode, :category_id, :subcategory_id, :baths, :beds, :price)
+    params.require(:listing).permit(:title, :description, :street, :city, :state_id, :zipcode, :category_id, :subcategory_id, :baths, :beds, :price, :id)
   end
 
 end
