@@ -40,11 +40,11 @@
 # end
 states = State.create([{ name:'Alabama'}, { name:'Alaska'}, { name:'Arizona'}, { name:'Arkansas'}, { name:'California'}, { name:'Colorado'}, { name:'Connecticut'}, { name:'Delaware'}, { name:'District of Columbia'}, { name:'Florida'}, { name:'Georgia'}, { name:'Hawaii'}, { name:'Idaho'}, { name:'Illinois'}, { name:'Indiana'}, { name:'Iowa'}, { name:'Kansas'}, { name:'Kentucky'}, { name:'Louisiana'}, { name:'Maine'}, { name:'Maryland'}, { name:'Massachusetts'}, { name:'Michigan'}, { name:'Minnesota'}, { name:'Mississippi'}, { name:'Missouri'}, { name:'Montana'}, { name:'Nebraska'}, { name:'Nevada'}, { name:'New Hampshire'}, { name:'New Jersey'}, { name:'New Mexico'}, { name:'New York'}, { name:'North Carolina'}, { name:'North Dakota'}, { name:'Ohio'}, { name:'Oklahoma'}, { name:'Oregon'}, { name:'Pennsylvania'}, { name:'Rhode Island'}, { name:'South Carolina'}, { name:'South Dakota'}, { name:'Tennessee'}, { name:'Texas'}, { name:'Utah'}, { name:'Vermont'}, { name:'Virginia'}, { name:'Washington'}, { name:'West Virginia'}, { name:'Wisconsin'}, { name:'Wyoming'}])
 
-rental_category = Category.create(name: 'Rental')
-sale_category = Category.create(name: 'Sale')
+# rental_category = Category.create(name: 'Rental')
+# sale_category = Category.create(name: 'Sale')
 
-Subcategory.create(name: 'Apartment')
-Subcategory.create(name: 'Condominium')
-Subcategory.create(name: 'House')
-Subcategory.create(name: 'Room')
-Subcategory.create(name: 'Townhouse')
+# Subcategory.create(name: 'Apartment')
+# Subcategory.create(name: 'Condominium')
+# Subcategory.create(name: 'House')
+# Subcategory.create(name: 'Room')
+# Subcategory.create(name: 'Townhouse')

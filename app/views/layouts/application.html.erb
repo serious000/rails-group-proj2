@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'layouts/header' %>
 <% if current_user %>
 	<form action="/sessions/current_user.id" method="post">
 		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -17,7 +18,14 @@
 <a href="/users/current_user.id">Your profile</a><br>
 <a href="/listings">All Listings</a>
 <% end %>
+<%= form_tag search_listings_path, method: :get do |f| %>
+<%= select_tag :category, options_for_select(Category.all.map { |c| [c.name, c.id]}) %>
+<%= text_field_tag :search, nil, placeholder: 'search' %>
+<%= text_field_tag :location, nil, placeholder: 'near' %>
+<%= submit_tag 'Search Listings' %>
+<% end %>
 <%= yield %>
-
+<%= render 'layouts/footer' %>
+<%= debug(params) if Rails.env.development? %>
 </body>
 </html>
