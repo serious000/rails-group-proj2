@@ -25,11 +25,10 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
-body {
-  padding-top: 60px;
-
+*{
+  margin: 0;
+  padding: 0;
 }
-
 section {
   overflow: auto;
 }
@@ -74,29 +73,16 @@ p {
 
 
 /* header */
-.container img{
-  margin-left:-35%;
+
+header{
+  height:150px;
 }
-
-.navbar-fixed-top {
-  background-color: white;
+header ul{
+  margin-left:80%;
+  margin-top:-1.5%;
 }
-
-
-.navbar
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
+header li{
+  display: inline-block;
 }
 
 /* sidebar */
@@ -166,29 +152,7 @@ input {
 
 /* footer */
 
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
-}
+
 
 /* Andrew stuff */
 
@@ -199,7 +163,19 @@ footer {
   /*border:solid;*/
   text-align: center;
 }
-#search_bar{
-  margin-top: 20%;
+#main_bar{
   margin-left:-10%;
+  margin-top: 5%;
+}
+#body{
+  margin-top:20%;
+}
+#search_bar input{
+  width: 15%;
+  height: 30px;
+  
+}
+#search_bar{
+  margin-top: 5%;
+  margin-left:10%;
 }

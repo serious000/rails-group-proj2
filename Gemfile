@@ -39,7 +39,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 gem 'hirb'
 gem 'devise'
-gem 'rails-footnotes', '>= 4.0.0', '<5'
+# gem 'rails-footnotes', '>= 4.0.0', '<5'
 gem 'byebug'
 gem "figaro"
 gem 'paperclip'
