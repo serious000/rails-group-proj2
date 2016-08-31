@@ -9,23 +9,7 @@
 <body>
 
   <%= render 'layouts/header' %>
-<% if current_user %>
-	<form action="/sessions/current_user.id" method="post">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		<input type="hidden" name="_method" value="delete">
-		<input type="submit" value="Log Out">
-	</form>
-<a href="/listings/new">Create a listing</a><br>
-<a href="/users/current_user.id">Your profile</a><br>
-<a href="/listings">All Listings</a>
-<% end %>
-<%= form_tag search_listings_path, method: :get do |f| %>
-<%= select_tag :category, options_for_select(Category.all.map { |c| [c.name, c.id]}) %>
-<%= text_field_tag :search, nil, placeholder: 'search' %>
-<%= text_field_tag :location, nil, placeholder: 'near' %>
-<%= text_field_tag :radius, value="20" %>
-<%= submit_tag 'Search Listings' %>
-<% end %>
+<%= render 'layouts/search' %>
 <%= yield %>
 <%= render 'layouts/footer' %>
 <%= debug(params) if Rails.env.development? %>
