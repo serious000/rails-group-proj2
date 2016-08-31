@@ -8,7 +8,18 @@
     <p>(<%= l.city %>)</p>
     <p> posted <%= time_ago_in_words(l.created_at) %> ago</p>
 	</div>
-	<br><br>
+	<br>
+	<!-- DELETE USER   -->
+	<% if current_user.id == l.user_id %>
+		<form action="/listings/<%= l.id %>" method="post">
+			<input type="hidden" name="authenticity_token" value="form_authenticity_token">
+			<input type="hidden" name="_method" value="delete">
+			<input type="hidden" name="listing[id]" value="<%= l.id %>">
+			<input type="submit" value="Delete Listing">
+		</form>
+	<% end %>
+	<!-- End delete user  -->
+	<br>
 <% end %>
 
 <th><%= link_to("New Post", new_listing_path) %> </th>

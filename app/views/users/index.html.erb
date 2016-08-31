@@ -9,13 +9,11 @@
 		</div>
 			<div id="middle_content">
 				<div id="content_one">
-					<%= image_tag("class_homes.jpg") %> 
 					<div id="search_bar">
-
 						<form action="/new" method='get'>
 							<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 							<input type="search" name="search">
-							<button type="button" class="btn-primary"> Search </button>
+							<button class="btn-primary btn-md"> Search </button>
 						</form>
 					</div>
 				</div>
