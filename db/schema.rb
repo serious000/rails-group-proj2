@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20160831172618) do
     t.string   "street"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "state_id"
     t.integer  "beds"
     t.float    "baths"
     t.float    "price"

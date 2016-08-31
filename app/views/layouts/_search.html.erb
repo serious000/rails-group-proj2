@@ -1,33 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Classifiedhomes2</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-  <%= render 'layouts/header' %>
 <% if current_user %>
 	<form action="/sessions/current_user.id" method="post">
 		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 		<input type="hidden" name="_method" value="delete">
 		<input type="submit" value="Log Out">
 	</form>
+
 <a href="/listings/new">Create a listing</a><br>
 <a href="/users/current_user.id">Your profile</a><br>
 <a href="/listings">All Listings</a>
 <% end %>
+<div id="search_bar">
 <%= form_tag search_listings_path, method: :get do |f| %>
 <%= select_tag :category, options_for_select(Category.all.map { |c| [c.name, c.id]}) %>
 <%= text_field_tag :search, nil, placeholder: 'search' %>
 <%= text_field_tag :location, nil, placeholder: 'near' %>
-<%= text_field_tag :radius, value="20" %>
-<%= submit_tag 'Search Listings' %>
+<%= text_field_tag :radius, nil, placeholder: 'within 20 miles' %>
+<button class="btn-primary"> Search Listings </button>
 <% end %>
-<%= yield %>
-<%= render 'layouts/footer' %>
-<%= debug(params) if Rails.env.development? %>
-</body>
-</html>
+</div>

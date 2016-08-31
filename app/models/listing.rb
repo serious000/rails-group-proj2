@@ -12,9 +12,22 @@ class Listing < ActiveRecord::Base
   end
 
   def self.search(params)
+    # if params[:radius].nil?
+    #   d = "20"
+    #   puts "AAAAAAA, #{d}"
+    # else
+    #   d = params[:radius]
+    #   puts "BBBBBBB, #{d}"
+    # end
+
     listings = Listing.where(category_id: params[:category].to_i)
-    listings = listings.where("title like ? or description like ?", "%{params[:search]}%", "%{params[:search]}%") if params[:search].present?
-    listings = listings.near(params[:location], 15) if params[:location].present?
+    # listings = listings.where("title LIKE ?", "%#{params[:search]}%") if params[:search].present?
+    listings = listings.where("title like ? or description like ?", "%#{params[:search]}%", "%#{params[:search]}%") if params[:search].present?
+    listings = listings.near(params[:location], params[:radius]) if params[:location].present?
+    # listings = listings.near(params[:location], 15) if params[:location].present?
+    puts "ZZZZZZZZ"
+    puts "{d}"
+    # puts listings
     listings
   end
 

@@ -1,13 +1,21 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "Classified Homes", root_path, id: "logo" %>
+
+<header>
+    <%= link_to root_path do %>
+      <%= image_tag("class_homes.jpg") %> 
+    <% end %>
+
     <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   root_path %></li>
-        <li><%= link_to "Help",   help_path %></li>
-        <li><%= link_to "Register", new_user_path %></li>
-        <li><%= link_to "Log in", new_user_path %></li>
+    <h4>
+      <ul>
+        <li><%= link_to "Home",   root_path %></li> |
+        <li><%= link_to "Register", new_user_path %></li> |
+        <li><%= link_to "Log in", new_user_path %></li> |
+        <li><a href="/users">Account</a></li> |
+        <li><a href="/listings">Post</a></li>
       </ul>
+    </h4>
     </nav>
   </div>
 </header>
+</body>
+
