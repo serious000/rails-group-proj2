@@ -152,7 +152,15 @@ input {
 
 /* footer */
 
-
+#footer{
+  font-size:1.5em;
+}
+#footer ul{
+  text-align:center;
+}
+#footer li{
+  display: inline-block;
+}
 
 /* Andrew stuff */
 
@@ -175,7 +183,10 @@ input {
   height: 30px;
   
 }
-#search_bar{
-  margin-top: 5%;
-  margin-left:10%;
+#search_bar select{
+  width: 15%;
 }
+#search_bar{
+  margin-left:2.5%;
+}
+
