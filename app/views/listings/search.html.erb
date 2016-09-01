@@ -1,14 +1,20 @@
+<style>
+#contain{
+	width:25%;
+	/*border:.1px solid;*/
+	height:600px;
+	margin-left:40%;
+	overflow: hidden;
+}
+#lists span{
+	font-size: 14px;
+}
+</style>
 
 <h1>Search Listings</h1>
 
-
+<div id="contain">
 <% @listings.each do |l| %>
-  <div>
-    <p><a href="/listings/<%= l.id %>"> <%= l.title %></a></p>
-    <p>$<%= l.price %></p>
-    <p>(<%= l.city %>)</p>
-    <p> posted <%= time_ago_in_words(l.created_at) %> ago</p>
-  </div>
-  <br><br>
+    <span><a href="/listings/<%= l.id %>"> <%= l.title %></a> $<%= l.price %> posted <%= time_ago_in_words(l.created_at) %> ago. Located in <%=l.city %></span><br><br>
 <% end %>
 </div>
