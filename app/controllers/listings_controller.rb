@@ -2,6 +2,7 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
+
   end
 
   def new
@@ -26,7 +27,11 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
-
+    @hash = Gmaps4rails.build_markers(@listing) do |list, marker|
+      marker.lat list.latitude
+      marker.lng list.longitude
+      marker.infowindow list.title
+    end
   end
 
   def edit
