@@ -45,8 +45,10 @@
 		<span>Description: </span>
 		<p id="box"><%= @listing.description %></p>
 		<p><span>Contact: </span><a href="mailto:<%=@listing.user.email%>?subject=Inquiry%20about%20your%20listing"><%=@listing.user.email%></a></p>
-		<% if current_user.id == @listing.user_id %>
+		<% if current_user %> 
+			<% if current_user.id == @listing.user_id %>
 			<a href="/listings/<%= @listing.id %>/edit">Edit this listing</a>
+			<% end %>
 		<% end %>
 	</div>
 	  
