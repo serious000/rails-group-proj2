@@ -33,3 +33,5 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
 });
+google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'page:load', initialize);
