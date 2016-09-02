@@ -1,15 +1,11 @@
-<% if current_user %>
-	<form action="/sessions/current_user.id" method="post">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		<input type="hidden" name="_method" value="delete">
-		<input type="submit" value="Log Out">
-	</form>
-
-<a href="/listings/new">Create a listing</a><br>
-<a href="/users/current_user.id">Your profile</a><br>
-<a href="/listings">All Listings</a>
-
-<% end %>
+<style>
+#current{
+	margin-left:5%;
+}
+#current span input{
+	width:5%;
+}
+</style>
 <div id="search_bar">
 <%= form_tag search_listings_path, method: :get do |f| %>
 <%= select_tag :category, options_for_select(Category.all.map { |c| [c.name, c.id]}) %><br>
@@ -17,5 +13,20 @@
 <%= text_field_tag :location, nil, placeholder: 'near' %><br>
 <%= text_field_tag :radius, nil, placeholder: 'within 20 miles' %><br>
 <button class="btn-primary"> Search Listings </button>
+<% end %>
+</div>
+<div id="current">
+<% if current_user %>
+	<form action="/sessions/current_user.id" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<input type="hidden" name="_method" value="delete">
+		<span><input type="submit" value="Log Out"></span>
+	</form>
+
+
+<a href="/listings/new">Create a listing</a><br>
+<a href="/users/current_user.id">Your profile</a><br>
+<a href="/listings">All Listings</a>
+
 <% end %>
 </div>
