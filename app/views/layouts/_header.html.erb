@@ -12,8 +12,10 @@
         <li><%= link_to "Log in", new_user_path %></li> |
         <% else %>
         <li><a href="/users">Account</a></li> |
-        <li><a href="/listings/new">Post</a></li>
+        <li><a href="/listings/new">Post</a></li> |
+        <li><a href="/logout" method="get"> Log out </a></li>
         <% end %>
+        
       </ul>
     </h4>
     </nav>
