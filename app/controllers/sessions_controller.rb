@@ -17,11 +17,15 @@ class SessionsController < ApplicationController
 		end
 	end
 
-
-	def destroy
+	def logout
 		session[:user_id] = nil
-		redirect_to "/users/new"
+		redirect_to '/users/new'
 	end
+
+	# def destroy
+	# 	session[:user_id] = nil
+	# 	redirect_to "/users/new"
+	# end
 
 	helper_method :current_user
 
